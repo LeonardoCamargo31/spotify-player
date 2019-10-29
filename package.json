@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint && npm run test:coverage",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch --require babel-register",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "npm run test -- --watch",
     "test:coverage": "nyc npm test",
     "start": "node_modules/.bin/webpack-dev-server --open"
   },
@@ -34,22 +34,25 @@
   },
   "homepage": "https://github.com/LeonardoCamargo31/spotify-player#readme",
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
     "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.9",
+    "jsdom": "^15.2.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "chai": "^4.2.0",
-    "mocha": "^6.2.2"
+    "spotify-wrapper-leonardo": "^1.0.4"
   }
 }

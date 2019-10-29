@@ -17,5 +17,6 @@ module.exports = {
   },
   rules: {
     'no-unused-expressions': 'off',
+    'no-param-reassign': 'off',
   }
 };
